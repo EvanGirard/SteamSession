@@ -1,0 +1,58 @@
+[
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1.Build.cs",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1Character.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1Character.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1GameMode.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\Source\\TP1\\TP1GameMode.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\romeo\\Documents\\UQAC\\Reseau\\TP1\\.vscode\\compileCommands_Default\\TP1.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	}
+]
