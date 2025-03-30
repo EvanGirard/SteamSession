@@ -59,6 +59,18 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	UMaterial* MiniPrimaryMat3;
 
+	UFUNCTION()
+	void OnDeath();
+
+	// Fonction appelée par le widget pour respawn
+	UFUNCTION(Server, Reliable)
+	void ServerRespawn();
+	void ServerRespawn_Implementation();
+
+	// Référence vers le widget de respawn
+	UPROPERTY(EditDefaultsOnly, Category = "UI")
+	TSubclassOf<UUserWidget> RespawnWidgetClass;
+
 protected:
 
 	/** Called for movement input */
@@ -66,6 +78,9 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	UPROPERTY()
+	UUserWidget* RespawnWidget;
 
 protected:
 	// APawn interface

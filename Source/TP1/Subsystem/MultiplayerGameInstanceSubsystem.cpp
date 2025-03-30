@@ -6,6 +6,9 @@
 #include <regex>
 
 #include "TP1/TP1/MyPlayerState.h"
+#include "OnlineSubsystem.h"
+#include "OnlineSessionSettings.h"
+#include "OnlineSubsystemUtils.h"
 
 void UMultiplayerGameInstanceSubsystem::HostGame()
 {
@@ -56,4 +59,32 @@ bool UMultiplayerGameInstanceSubsystem::JoinGame(FString Ip)
 		return true;
 	}
 	return false;
+}
+
+void UMultiplayerGameInstanceSubsystem::HostSession()
+{
+	if (IOnlineSubsystem* Subsystem = Online::GetSubsystem(GetWorld()))
+	{
+		Session = Subsystem->GetSessionInterface();
+	}
+	
+	FOnlineSessionSettings SessionSettings;
+
+	SessionSettings.bIsDedicated = false;
+	SessionSettings.bIsLANMatch = false;
+	SessionSettings.NumPublicConnections = 2;
+	SessionSettings.bAllowJoinInProgress = true;
+	SessionSettings.bAllowJoinViaPresence = true;
+	SessionSettings.bUseLobbiesIfAvailable = true;
+	SessionSettings.bAllowInvites = true;
+	SessionSettings.bUsesPresence = true;
+	SessionSettings.bShouldAdvertise = true;
+
+	SessionSettings.Set(FName("MatchType"), FString("WorkingHouse"), EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
+
+	
+}
+
+void UMultiplayerGameInstanceSubsystem::JoinSession()
+{
 }

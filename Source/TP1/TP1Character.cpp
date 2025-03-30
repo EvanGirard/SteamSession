@@ -10,6 +10,9 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Blueprint/UserWidget.h"
+#include "GameFramework/PlayerStart.h"
+#include "Kismet/GameplayStatics.h"
 #include "Net/UnrealNetwork.h"
 #include "TP1/MyPlayerState.h"
 
@@ -160,5 +163,52 @@ void ATP1Character::OnPlayerStateChanged(APlayerState* NewPlayerState, APlayerSt
 	{
 		PS->OnSkinIndexChanged.AddDynamic(this, &ATP1Character::ApplySkin);
 		ApplySkin(PS->GetSkinIndex());
+	}
+}
+
+void ATP1Character::OnDeath()
+{
+	// Désactiver le personnage
+	GetMesh()->SetVisibility(false);
+	DisableInput(Cast<APlayerController>(GetController()));
+
+	// Afficher le widget de respawn
+	if (RespawnWidgetClass)
+	{
+		APlayerController* PC = Cast<APlayerController>(GetController());
+		if (PC)
+		{
+			RespawnWidget = CreateWidget<UUserWidget>(PC, RespawnWidgetClass);
+			if (RespawnWidget)
+			{
+				RespawnWidget->AddToViewport();
+			}
+		}
+	}
+}
+
+void ATP1Character::ServerRespawn_Implementation()
+{
+	// Trouver un spawn point valide
+	APlayerController* PC = Cast<APlayerController>(GetController());
+	if (PC)
+	{
+		TArray<AActor*> PlayerStarts;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), APlayerStart::StaticClass(), PlayerStarts);
+		if (PlayerStarts.Num() > 0)
+		{
+			// Sélectionner un spawn aléatoire
+			AActor* SpawnPoint = PlayerStarts[FMath::RandRange(0, PlayerStarts.Num() - 1)];
+			if (SpawnPoint)
+			{
+				// Faire respawn le joueur
+				PC->UnPossess();
+				ATP1Character* NewCharacter = GetWorld()->SpawnActor<ATP1Character>(GetClass(), SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+				if (NewCharacter)
+				{
+					PC->Possess(NewCharacter);
+				}
+			}
+		}
 	}
 }
