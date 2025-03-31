@@ -26,6 +26,12 @@ class TP1_API UMultiplayerGameInstance : public UGameInstance
 	virtual void OnFindSessionsComplete(bool bWasSuccessful);
 	virtual void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
+	IOnlineAchievementsPtr GetAchievementsInterface();
+	void UnlockAchievement(FString AchievementName);
+	void OnAchievementUnlocked(const FUniqueNetId& PlayerId, bool bWasSuccessful);
+	void OnQueryAchievementsComplete(const FUniqueNetId& PlayerId, bool bWasSuccessful);
+
+	
 	UFUNCTION(BlueprintCallable)
 	void HostSession();
 
